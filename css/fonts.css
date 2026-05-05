@@ -1,2 +1,51 @@
 /* -> import über url inklusive Just Another Hand */
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Just+Another+Hand&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Moirai+One&display=swap');
+
+
+
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(160deg, #ffffff 0%, #ffffff 40%, #ffffff 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+/* ──────────────────────────────
+   HEADER
+────────────────────────────── */
+.site-header {
+  background: linear-gradient(90deg, #458CCC 0%, #458CCC 50%, #1CA9E0 100%);
+  color: var(--color-white);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 16px rgba(45, 127, 193, 0.35);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+}
+
+

@@ -28,3 +28,52 @@ body {
   --font-impressum: 'Arial';
 
 }
+
+
+
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(160deg, #ffffff 0%, #ffffff 40%, #ffffff 100%);
+  background-attachment: fixed;
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+
+
+/* ──────────────────────────────
+   HEADER
+────────────────────────────── */
+.site-header {
+  background: linear-gradient(90deg, #458CCC 0%, #458CCC 50%, #1CA9E0 100%);
+  color: var(--color-white);
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 16px rgba(45, 127, 193, 0.35);
+}
+
+
+.site-header .logo 
+
+.site-header a img,
+.site-header img {
+  height: 44px; 
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+
