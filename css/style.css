@@ -76,4 +76,93 @@ img {
   object-fit: contain;
 }
 
+/* Desktop nav */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+}
 
+.site-nav > li > a {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-white);
+  white-space: nowrap;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition-in), border-color var(--transition-in);
+}
+
+.site-nav > li > a:hover {
+  color: var(--color-hover);
+  border-bottom-color: var(--color-hover);
+}
+
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown > a::after {
+  content: ' ▾';
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+
+/* Maus Verbundung zu Menu */
+.nav-dropdown::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  background:var(--color-header-right);
+  border-radius: var(--radius);
+  min-width: 165px;
+  list-style: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+
+
+
+.dropdown-menu li a {
+  display: block;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-white);
+  transition: background var(--transition-in), color var(--transition-in);
+}
+
+
+
+/* Burger button */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  transition: background var(--transition-out);
+}
+
+.burger:hover {
+  background: rgba(255,255,255,0.15);
+  transition: background var(--transition-in);
+}
