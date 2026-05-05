@@ -1,25 +1,111 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocktail API</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booze & Breeze</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-    <header>
-        <h1>Vorlage für interaktive Medien II</h1>
 
-    </header>
-    <main>
-        <h2>Main Content</h2>
-        <p>This is the main content of the page.</p>
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="index.html" class="logo">
+ 
+        <circle cx="18" cy="18" r="17" fill="white" fill-opacity="0.15" stroke="white" stroke-width="1.5"/>
+        <text x="18" y="25" text-anchor="middle" font-size="20" fill="white"></text>
+      </svg>
+      Booze &amp; Breeze
+    </a>
 
-    </main>
-    <footer>
-        <p>This is the footer of the page.</p>
+    <nav aria-label="Hauptnavigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li class="nav-dropdown">
+          <a href="#locations" tabindex="0">Locations</a>
+          <ul class="dropdown-menu">
+            <li><a href="brugg.html">Brugg</a></li>
+            <li><a href="olten.html">Olten</a></li>
+            <li><a href="biel.html">Biel</a></li>
+            <li><a href="hagneck.html">Hagneck</a></li>
+            <li><a href="bern.html">Bern</a></li>
+            <li><a href="thun.html">Thun</a></li>
+            <li><a href="interlaken.html">Interlaken</a></li>
+            <li><a href="brienz.html">Brienz</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
 
-    </footer>
-    <script src="js/script.js" type="module"></script>
+    <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <ul class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="ueber-uns.html">Über uns</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li class="mobile-section-label">Locations</li>
+    <li><a href="brugg.html">Brugg</a></li>
+    <li><a href="olten.html">Olten</a></li>
+    <li><a href="biel.html">Biel</a></li>
+    <li><a href="hagneck.html">Hagneck</a></li>
+    <li><a href="bern.html">Bern</a></li>
+    <li><a href="thun.html">Thun</a></li>
+    <li><a href="interlaken.html">Interlaken</a></li>
+    <li><a href="brienz.html">Brienz</a></li>
+  </ul>
+
+  <!-- MAIN -->
+  <main>
+    <section class="hero">
+      <h1>Booze &amp; Breeze</h1>
+      <p>Cocktails entlang der Route — von Brugg bis Brienz, Schluck für Schluck.</p>
+    </section>
+
+    <section class="route-section" id="locations">
+
+      <!-- DESKTOP: -->
+ 
+
+      <div class="image-map">
+  <img src="asse" alt="Eine Karte die den Flussverlauf der Aare zeigt">
+</div>
+ 
+
+
+      <!-- MOBILE: Timeline -->
+      <div class="route-mobile" aria-label="Locations als Liste">
+        <ul class="timeline">
+          <li><a href="brugg.html"><span class="timeline-drink">🍹</span> Brugg</a></li>
+          <li><a href="olten.html"><span class="timeline-drink">🍸</span> Olten</a></li>
+          <li><a href="biel.html"><span class="timeline-drink">🥂</span> Biel</a></li>
+          <li><a href="hagneck.html"><span class="timeline-drink">🌿</span> Hagneck</a></li>
+          <li><a href="bern.html"><span class="timeline-drink">🐻</span> Bern</a></li>
+          <li><a href="thun.html"><span class="timeline-drink">🏰</span> Thun</a></li>
+          <li><a href="interlaken.html"><span class="timeline-drink">🏔️</span> Interlaken</a></li>
+          <li><a href="brienz.html"><span class="timeline-drink">💙</span> Brienz</a></li>
+        </ul>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p class="footer-brand">🍹 Booze &amp; Breeze</p>
+    <ul class="footer-links">
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+    </ul>
+    <p class="footer-copy">Cocktails entlang der Route &mdash; von Brugg bis Brienz</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/home-route.js"></script>
 </body>
 </html>
