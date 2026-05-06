@@ -124,15 +124,6 @@ img {
 }
 
 
-/* Maus Verbundung zu Menu */
-.nav-dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  height: 12px;
-}
 
 .dropdown-menu {
   position: absolute;
