@@ -27,6 +27,12 @@ body {
   --font-main:'Just Another Hand';
   --font-impressum: 'Arial';
 
+  --font-size-header: 2rem;
+  --font-size-footer: ;
+  --font-size-main: ;
+
+  --font-weight-main: 250;
+
 }
 
 
@@ -70,7 +76,7 @@ img {
 
 .site-header a img,
 .site-header img {
-  height: 44px; 
+  height: 50px; 
   width: auto;
   display: block;
   object-fit: contain;
@@ -82,16 +88,22 @@ img {
   align-items: center;
   gap: 1.5rem;
   list-style: none;
+
 }
 
 .site-nav > li > a {
   font-family: var(--font-main);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: var(--font-size-header);
+  font-weight: var(--font-weight-main);
   color: var(--color-white);
   white-space: nowrap;
   padding: 0.3rem 0;
   border-bottom: 2px solid transparent;
+  transition: color var(--transition-in), border-color var(--transition-in);
+
+  text-decoration: none;
+  border-bottom: none;
+
   transition: color var(--transition-in), border-color var(--transition-in);
 }
 
@@ -132,10 +144,8 @@ img {
   list-style: none;
   box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   overflow: hidden;
+
 }
-
-
-
 
 .dropdown-menu li a {
   display: block;
@@ -144,6 +154,12 @@ img {
   font-weight: 600;
   color: var(--color-white);
   transition: background var(--transition-in), color var(--transition-in);
+
+  text-decoration: none;
+}
+
+.dropdown-menu li a:hover {
+  color: var(--color-hover);
 }
 
 
