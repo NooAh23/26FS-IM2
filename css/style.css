@@ -174,14 +174,66 @@ img {
 .burger:hover {
   background: rgba(255,255,255,0.15);
   transition: background var(--transition-in);
+
+
+
+
 }
+
+
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(160deg, #2d7fc1, #458CCC);
+  list-style: none;
+  flex-direction: column;
+  padding: 0.8rem 2rem 1.2rem;
+  gap: 0;
+  z-index: 99;
+}
+
+
+
+
+.mobile-nav.open {
+  display: flex;
+}
+
+.mobile-nav li a {
+  display: block;
+  padding: 0.65rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var ()
+}
+
+.mobile-nav li a:hover {
+  color: var(--color-hover);
+  padding-left: 0.5rem;
+  transition: color var(--transition-in), padding-left var(--transition-in);
+}
+	
+
+
+
+
+
+
+
+
+
 
 
 /* Footer */
 .site-footer {
   width: 100%;
-  margin-top: auto; /* Schiebt den Footer immer nach unten */
-  padding-top: 50px; /* Abstand zur Route/Karte oben */
+  margin-top: auto; 
+  padding-top: 50px; 
 }
 
 .footer-blue-bar {
@@ -203,13 +255,19 @@ img {
 .footer-logo-img {
   height: 60px; /* Größe des Logos im Footer */
   width: auto;
-  /* Falls das Logo dunkel ist und man es auf blau weiß machen will: 
-     filter: brightness(0) invert(1); */
+  
 }
 
 .footer-brand-text {
   font-family: var(--font-main);
   font-size: 2.5rem;
-  color: #000; /* Schwarz laut Screenshot, oder white für Kontrast */
+  color: #000; 
 }
+
+
+
+
+
+
+
 
