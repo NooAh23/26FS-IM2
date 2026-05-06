@@ -28,7 +28,7 @@ body {
   --font-impressum: 'Arial';
 
   --font-size-header: 2rem;
-  --font-size-footer: ;
+  --font-size-footer: 2rem;
   --font-size-main: ;
 
   --font-weight-main: 250;
@@ -52,6 +52,8 @@ img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 0.1rem;
+  padding-bottom: 0.3rem;
 }
 
 
@@ -253,15 +255,17 @@ img {
 }
 
 .footer-logo-img {
-  height: 60px; /* Größe des Logos im Footer */
+  height: 75px; /* Größe des Logos im Footer */
   width: auto;
   
 }
 
 .footer-brand-text {
   font-family: var(--font-main);
-  font-size: 2.5rem;
-  color: #000; 
+  font-size: var(--font-size-footer);
+  font-weight: var(--font-weight-main);
+  color: var(--color-text);
+  padding-top: 0.75rem; 
 }
 
 
