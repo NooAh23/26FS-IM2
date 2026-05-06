@@ -50,6 +50,8 @@ body {
 img {
   max-width: 100%;
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -173,3 +175,41 @@ img {
   background: rgba(255,255,255,0.15);
   transition: background var(--transition-in);
 }
+
+
+/* Footer */
+.site-footer {
+  width: 100%;
+  margin-top: auto; /* Schiebt den Footer immer nach unten */
+  padding-top: 50px; /* Abstand zur Route/Karte oben */
+}
+
+.footer-blue-bar {
+  /* Verlauf analog zum Header für ein konsistentes Design */
+  background: linear-gradient(90deg, #458CCC 0%, #458CCC 50%, #1CA9E0 100%);
+  height: 100px; /* Höhe des blauen Balkens */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -3px 16px rgba(0, 0, 0, 0.1);
+}
+
+.footer-logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-logo-img {
+  height: 60px; /* Größe des Logos im Footer */
+  width: auto;
+  /* Falls das Logo dunkel ist und man es auf blau weiß machen will: 
+     filter: brightness(0) invert(1); */
+}
+
+.footer-brand-text {
+  font-family: var(--font-main);
+  font-size: 2.5rem;
+  color: #000; /* Schwarz laut Screenshot, oder white für Kontrast */
+}
+
