@@ -10,43 +10,45 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <a href="index.html">
-      <img src="img/Logo/Beeze & Brooze.png" alt="Breeze & Boose">
-    </a>
+<!-- Header -->
+<header class="site-header">
+  <a href="index.html">
+  <img src="img/Logo/Beeze & Brooze.png" alt="Breeze & Boose">
+  </a>
 
-    <nav aria-label="Hauptnavigation">
-      <ul class="site-nav">
-        <li><a href="index.html">Startseite</a></li>
-        <li><a href="ueber-uns.html">Über uns</a></li>
-        <li><a href="impressum.html">Impressum</a></li>
-        <li class="nav-dropdown">
-          <a href="#locations" tabindex="0">Locations</a>
-          <ul class="dropdown-menu">
-            <li><a href="brugg.html">Brugg</a></li>
-            <li><a href="olten.html">Olten</a></li>
-            <li><a href="biel.html">Biel</a></li>
-            <li><a href="hagneck.html">Hagneck</a></li>
-            <li><a href="bern.html">Bern</a></li>
-            <li><a href="thun.html">Thun</a></li>
-            <li><a href="interlaken.html">Interlaken</a></li>
-            <li><a href="brienz.html">Brienz</a></li>
-          </ul>
-        </li>
+  <nav aria-label="Hauptnavigation">
+    <ul class="site-nav">
+      <li><a href="index.html">Startseite</a></li>
+      <li><a href="ueber-uns.html">Über uns</a></li>
+      <li><a href="impressum.html">Impressum</a></li>
+
+      <li class="nav-dropdown">
+      <a href="#locations" tabindex="0">Locations</a>
+      <ul class="dropdown-menu">
+         <li><a href="brugg.html">Brugg</a></li>
+         <li><a href="olten.html">Olten</a></li>
+         <li><a href="biel.html">Biel</a></li>
+         <li><a href="hagneck.html">Hagneck</a></li>
+         <li><a href="bern.html">Bern</a></li>
+         <li><a href="thun.html">Thun</a></li>
+         <li><a href="interlaken.html">Interlaken</a></li>
+         <li><a href="brienz.html">Brienz</a></li>
+       </ul>
+      </li>
       </ul>
-    </nav>
+   </nav>
 
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <!-- MOBILE NAV -->
+  <!-- Mobile Navigation -->
   <ul class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation">
     <li><a href="index.html">Startseite</a></li>
     <li><a href="ueber-uns.html">Über uns</a></li>
     <li><a href="impressum.html">Impressum</a></li>
+
     <li class="mobile-section-label">Locations</li>
     <li><a href="brugg.html">Brugg</a></li>
     <li><a href="olten.html">Olten</a></li>
@@ -58,48 +60,24 @@
     <li><a href="brienz.html">Brienz</a></li>
   </ul>
 
-
-
-
-
-
-
-
-
   <main>
 
   <button id="wetter_button">Wetter laden</button>
 
-  <!-- Hier werden die Daten reingeschrieben -->
+  <!-- Infos auf Oberfläche der Webseite -->
   <div id="wetterAnzeige" style="margin-top: 20px; font-family:'Just Another Hand';">
     <p>Ortschaft: <span id="ort">-</span></p>
     <p>Temperatur: <span id="temp">-</span> °C</p>
     <p>Sonnenscheindauer heute: <span id="sonne">-</span></p>
   </div>
 
-   <p>Unsere Empfehlung: <span id="drinkAnzeige">-</span></p>
+  <p>Kategorie: <span id="drinkAnzeige">-</span></p>
+  <p>Empfehlung: <span id="spezifischerDrink">-</span></p>
+  <img id="drinkBild" src="" alt="Drink Bild" style="max-width: 200px; display: none;">
 
-</main>
+</main> 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
- 
-
-
-  
-  <!-- FOOTER -->
+  <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-blue-bar">
     <div class="footer-logo-container">
@@ -110,10 +88,7 @@
   </div>
 </footer>
 
-
-
-
-   <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
