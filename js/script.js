@@ -19,9 +19,9 @@ document.getElementById('wetter_button').addEventListener('click', function() {
     let city = pageUrl.split('/').pop().split('.html')[0].toLowerCase();
     
     // Korrektur für Städte auf "Schweizerdeutsch"
-    if (city === "interlaken") {
-        city = "interlake";
-    }
+if (city === "interlake" && ortschaft === "Bärn") {
+            ortschaft = "Interlaken";
+        }
     
     console.log("Erkannte Stadt (API-konform):", city);
     
