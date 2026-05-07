@@ -1,13 +1,31 @@
 console.log("blub");
-// Dropdown-Logik für Desktop/Tablet
+// Dropdown für Desktop/Tablet
 const navDropdown = document.querySelector('.nav-dropdown');
 
 if (navDropdown) {
     navDropdown.addEventListener('click', (e) => {
-        // Verhindert das sofortige Springen zum Anker #locations auf Tablets
+        
         if (window.innerWidth > 768) {
-            // Hier könnte man ein manuelles Toggle einbauen, 
-            // falls das CSS-Hover nicht ausreicht.
+           
         }
     });
 }
+
+
+
+const button = document.getElementById("wetterButton");
+
+button.addEventListener("click", async () => {
+
+  const url = "https://aareguru.existenz.ch/v2018/current";
+
+  const antwort = await fetch(url);
+
+  const daten = await antwort.json();
+
+  console.log(daten);
+
+  console.log("Bern Temperatur:");
+  console.log(daten.values.bern.temperature);
+
+});
