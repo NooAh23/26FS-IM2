@@ -12,20 +12,35 @@ if (navDropdown) {
 }
 
 
+document.getElementById('wetterButton').addEventListener('click', function() {
+    const url = 'https://aareguru.existenz.ch/v2/current?city=brienz';
 
-const button = document.getElementById("wetterButton");
+    console.log("Test API Aare Guru");
 
-button.addEventListener("click", async () => {
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            
+            console.log("Komplette API-Daten erhalten:", data);
 
-  const url = "https://aareguru.existenz.ch/v2018/current";
+            //Einz elne Werte extrahieren
+            const ortschaft = data.aare.location;
+            const temperatur = data.aare.temperature;
+            const sonneHeute = data.sun.today.suntotal;
 
-  const antwort = await fetch(url);
+            //Ausgabe Console
+            console.log("--- Gefilterte Daten ---");
+            console.log("Ort:", ortschaft);
+            console.log("Temp:", temperatur + " °C");
+            console.log("Sonne heute:", sonneHeute);
+            console.log("------------------------");
 
-  const daten = await antwort.json();
-
-  console.log(daten);
-
-  console.log("Bern Temperatur:");
-  console.log(daten.values.bern.temperature);
-
+            //Daten im HTML
+            document.getElementById('ort').textContent = ortschaft;
+            document.getElementById('temp').textContent = temperatur;
+            document.getElementById('sonne').textContent = sonneHeute;
+        })
+        .catch(error => {
+            console.error('Fehler in der Konsole:', error);
+        });
 });
