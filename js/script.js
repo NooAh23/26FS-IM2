@@ -12,7 +12,6 @@ if (navDropdown) {
 }
 
 
-
 const button = document.getElementById("wetterButton");
 
 button.addEventListener("click", async () => {
@@ -22,8 +21,6 @@ button.addEventListener("click", async () => {
   const antwort = await fetch(url);
 
   const daten = await antwort.json();
-
-  console.log(daten);
 
   console.log("Bern Temperatur:");
   console.log(daten.values.bern.temperature);
