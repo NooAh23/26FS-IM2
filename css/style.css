@@ -488,6 +488,7 @@ main {
   margin: 1.5rem auto;
   text-align: center;
   backdrop-filter: blur(6px);
+  border-radius: 28px;
 }
 
 /* Drink-Bild innerhalb der Karte */
@@ -551,6 +552,8 @@ main {
 }
 
 
+
+
 /* Footer */
 .site-footer {
   width: 100%;
@@ -595,6 +598,98 @@ main {
   padding-top: 0.5rem;
 }
 
+
+/* ──────────────────────────────
+   13. RESPONSIVE — Tablet (max 900px)
+────────────────────────────── */
+@media (max-width: 900px) {
+  /* Desktop-Nav ausblenden */
+  .site-nav {
+    display: none;
+  }
+  /* Burger einblenden */
+  .burger {
+    display: flex;
+  }
+  /* Karte verkleinern */
+  .image-map img {
+    max-width: 100%;
+  }
+  /* Team nebeneinander bleibt, aber kleiner */
+  .team-member img {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+
+/* ──────────────────────────────
+   14. RESPONSIVE — Mobil (max 600px)
+────────────────────────────── */
+@media (max-width: 600px) {
+  /* Header kompakter */
+  .site-header {
+    padding: 0 1rem;
+  }
+  .site-header a img {
+    height: 40px;
+  }
+  /* Desktop-Karte verstecken, Mobile-Timeline zeigen */
+  .image-map {
+    display: none;
+  }
+  .route-mobile {
+    display: block;
+  }
+  /* Hero */
+  .hero {
+    padding: 2rem 1rem 1rem;
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hero p {
+    font-size: 1.3rem;
+  }
+  /* Location-Seite: kein fixed background (Performance) */
+  .location-page main {
+    background-attachment: scroll;
+    padding: 1.5rem 0.5rem 2rem;
+  }
+  .location-title {
+    font-size: 2.5rem;
+  }
+  /* Drink-Karte volle Breite */
+  .drink-card {
+    width: 95%;
+    padding: 1rem;
+  }
+  /* Team: untereinander */
+  .team-member,
+  .team-member.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-member img {
+    width: 120px;
+    height: 120px;
+  }
+  /* Footer */
+  .footer-blue-bar {
+    height: 75px;
+  }
+  .footer-logo-img {
+    height: 48px;
+  }
+  .footer-brand-text {
+    font-size: 1.6rem;
+  }
+  /* Lottie */
+  .my-small-lottie {
+    width: 90px;
+    height: 90px;
+  }
+}
 
 
 
