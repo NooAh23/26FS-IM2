@@ -60,7 +60,8 @@
     <li><a href="brienz.html">Brienz</a></li>
   </ul>
 
-  <main>
+ <main style="background-image: url('img/interlaken.jpg');">
+      <h1 class="location-title">Brienz</h1>
 
 
 <script
@@ -68,33 +69,36 @@
   type="module"
 ></script>
 
+<!-- Ich habe die Inline-Styles entfernt und eine Klasse hinzugefügt -->
 <dotlottie-wc
+  class="my-small-lottie"
   src="https://lottie.host/66d30e7c-8c7b-4ec6-a0b1-e5b178fc978a/40IhDuUP9Z.lottie"
-  style="width: 300px;height: 300px"
   autoplay
   loop
 ></dotlottie-wc>
 
 
-  <button id="wetter_button">Wetter laden</button>
+<button id="wetter_button">Wetter laden</button>
+<div id="wetterAnzeige" style="margin-top: 20px;">
+  <p>Ortschaft: <span id="ort">-</span></p>
+  <p>Temperatur: <span id="temp">-</span> °C</p>
+  <p>Sonnenscheindauer heute: <span id="sonne">-</span></p>
+</div>
 
-  <!-- Infos auf Oberfläche der Webseite -->
-  <div id="wetterAnzeige" style="margin-top: 20px; font-family:'Just Another Hand';">
-    <p>Ortschaft: <span id="ort">-</span></p>
-    <p>Temperatur: <span id="temp">-</span> °C</p>
-    <p>Sonnenscheindauer heute: <span id="sonne">-</span></p>
-  </div>
+<div class="drink-card">
+  <img id="drinkBild" src="" alt="Drink Bild">
+  <span id="spezifischerDrink">-</span>
+  <span id="drinkBeschreibung">-</span>
+</div>
 
-  <p>Kategorie: <span id="drinkAnzeige">-</span></p>
-  <p>Empfehlung: <span id="spezifischerDrink">-</span></p>
-  <img id="drinkBild" src="" alt="Drink Bild" style="max-width: 200px; display: none;">
+<div class="location-nav">
+  <a href="brugg.html">← Brugg</a>
+  <a href="interlaken.html">Interlaken →</a>
+</div>
 
-  <!-- NEU: Hier kommt die Beschreibung rein -->
-  <p><span id="drinkBeschreibung">-</span></p>
+<p style="display:none;"><span id="drinkAnzeige">-</span></p>
 
-</main> 
-
-
+<main>
 
   <!-- Footer -->
 <footer class="site-footer">
