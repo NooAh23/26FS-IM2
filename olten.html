@@ -3,40 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Booze & Breeze</title>  
+  <title>Booze & Breeze - Olten</title>  
   <link rel="icon" type="image/png" href="img/Logo/Beeze & Brooze.png">
-  
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
+<body class="location-page">
 
-<!-- Header -->
-<header class="site-header">
-  <a href="index.html">
-  <img src="img/Logo/Beeze & Brooze.png" alt="Breeze & Boose">
-  </a>
+  <!-- Header -->
+  <header class="site-header">
+    <a href="index.html">
+      <img src="img/Logo/Beeze & Brooze.png" alt="Breeze & Boose">
+    </a>
 
-  <nav aria-label="Hauptnavigation">
-    <ul class="site-nav">
-      <li><a href="index.html">Startseite</a></li>
-      <li><a href="ueber-uns.html">Über uns</a></li>
-      <li><a href="impressum.html">Impressum</a></li>
+    <nav aria-label="Hauptnavigation">
+      <ul class="site-nav">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
 
-      <li class="nav-dropdown">
-      <a href="#locations" tabindex="0">Locations</a>
-      <ul class="dropdown-menu">
-         <li><a href="brugg.html">Brugg</a></li>
-         <li><a href="olten.html">Olten</a></li>
-         <li><a href="biel.html">Biel</a></li>
-         <li><a href="hagneck.html">Hagneck</a></li>
-         <li><a href="bern.html">Bern</a></li>
-         <li><a href="thun.html">Thun</a></li>
-         <li><a href="interlaken.html">Interlaken</a></li>
-         <li><a href="brienz.html">Brienz</a></li>
-       </ul>
-      </li>
+        <li class="nav-dropdown">
+          <a href="#locations" tabindex="0">Locations</a>
+          <ul class="dropdown-menu">
+    <li><a href="brienz.html">Brienz</a></li>
+    <li><a href="interlaken.html">Interlaken</a></li>
+    <li><a href="thun.html">Thun</a></li>
+    <li><a href="bern.html">Bern</a></li>
+    <li><a href="hagneck.html">Hagneck</a></li>
+    <li><a href="biel.html">Biel</a></li>
+    <li><a href="olten.html">Olten</a></li> 
+    <li><a href="brugg.html">Brugg</a></li>
+          </ul>
+        </li>
       </ul>
-   </nav>
+    </nav>
 
     <button class="burger" id="burger" aria-label="Menü öffnen" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -50,65 +49,64 @@
     <li><a href="impressum.html">Impressum</a></li>
 
     <li class="mobile-section-label">Locations</li>
-    <li><a href="brugg.html">Brugg</a></li>
-    <li><a href="olten.html">Olten</a></li>
-    <li><a href="biel.html">Biel</a></li>
-    <li><a href="hagneck.html">Hagneck</a></li>
-    <li><a href="bern.html">Bern</a></li>
-    <li><a href="thun.html">Thun</a></li>
-    <li><a href="interlaken.html">Interlaken</a></li>
     <li><a href="brienz.html">Brienz</a></li>
+    <li><a href="interlaken.html">Interlaken</a></li>
+    <li><a href="thun.html">Thun</a></li>
+    <li><a href="bern.html">Bern</a></li>
+    <li><a href="hagneck.html">Hagneck</a></li>
+    <li><a href="biel.html">Biel</a></li>
+    <li><a href="olten.html">Olten</a></li> 
+    <li><a href="brugg.html">Brugg</a></li>
   </ul>
 
-  <main>
+  <!-- Hauptinhalt mit CSS-Variable für das Hintergrundbild -->
+<main style="--location-bg: url('../img/Bilder/Olten.jpg');">
 
+    <h1 class="location-title">Olten</h1>
 
-<script
-  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js"
-  type="module"
-></script>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.9.14/dist/dotlottie-wc.js" type="module"></script>
 
-<dotlottie-wc
-  src="https://lottie.host/66d30e7c-8c7b-4ec6-a0b1-e5b178fc978a/40IhDuUP9Z.lottie"
-  style="width: 300px;height: 300px"
-  autoplay
-  loop
-></dotlottie-wc>
+    <dotlottie-wc
+      class="my-small-lottie"
+      src="https://lottie.host/66d30e7c-8c7b-4ec6-a0b1-e5b178fc978a/40IhDuUP9Z.lottie"
+      autoplay
+      loop>
+    </dotlottie-wc>
 
+    <button id="wetter_button">Wetter laden</button>
+    
+    <div id="wetterAnzeige" style="margin-top: 20px;">
+      <p>Ortschaft: <span id="ort">-</span></p>
+      <p>Temperatur: <span id="temp">-</span> °C</p>
+      <p>Sonnenscheindauer heute: <span id="sonne">-</span></p>
+    </div>
 
-  <button id="wetter_button">Wetter laden</button>
+    <div class="drink-card">
+      <img id="drinkBild" src="" alt="Drink Bild">
+      <span id="spezifischerDrink">-</span>
+      <span id="drinkBeschreibung">-</span>
+    </div>
 
-  <!-- Infos auf Oberfläche der Webseite -->
-  <div id="wetterAnzeige" style="margin-top: 20px; font-family:'Just Another Hand';">
-    <p>Ortschaft: <span id="ort">-</span></p>
-    <p>Temperatur: <span id="temp">-</span> °C</p>
-    <p>Sonnenscheindauer heute: <span id="sonne">-</span></p>
-  </div>
+    <div class="location-nav">
+      <a href="biel.html">← Biel</a>
+      <a href="brugg.html">Brugg →</a>
+    </div>
 
-  <p>Kategorie: <span id="drinkAnzeige">-</span></p>
-  <p>Empfehlung: <span id="spezifischerDrink">-</span></p>
-  <img id="drinkBild" src="" alt="Drink Bild" style="max-width: 200px; display: none;">
+    <p style="display:none;"><span id="drinkAnzeige">-</span></p>
 
-  <!-- NEU: Hier kommt die Beschreibung rein -->
-  <p><span id="drinkBeschreibung">-</span></p>
-
-</main> 
-
-
+  </main>
 
   <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-blue-bar">
-    <div class="footer-logo-container">
-      <a href=""></a>
-      <img src="img/Logo/Beeze & Brooze.png" alt="Booze & Breeze Logo" class="footer-logo-img">
-      <span class="footer-brand-text">Booze & Breeze</span>
+  <footer class="site-footer">
+    <div class="footer-blue-bar">
+      <div class="footer-logo-container">
+        <img src="img/Logo/Beeze & Brooze.png" alt="Booze & Breeze Logo" class="footer-logo-img">
+        <span class="footer-brand-text">Booze & Breeze</span>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="js/script.js"></script>
+  <script src="js/script.js"></script>
 
 </body>
 </html>
-
