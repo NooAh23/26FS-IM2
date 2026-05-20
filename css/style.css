@@ -683,7 +683,7 @@ main {
   .image-map img {
     max-width: 100%;
   }
-  /* Team nebeneinander bleibt, aber kleiner */
+  /
   .team-member img {
     width: 110px;
     height: 110px;
@@ -760,6 +760,47 @@ main {
 }
 
 
+/* 
+   IMPRESSUM
+ */
+.imprint-page {
+
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.imprint-page h1 {
+  font-family: var(--font-display);
+  font-size: 3.6rem;
+  color: var(--color-header);
+  margin-bottom: 2rem;
+}
+
+.imprint-page h2 {
+  font-size: 2.15rem;
+  font-weight: 700;
+  color: var(--color-header);
+  margin: 1.5rem 0 0.4rem;
+}
+
+.imprint-page p,
+.imprint-page address {
+  font-size: 1.5rem;
+  line-height: 1.7;
+  color: #4a5568;
+  font-style: normal;
+}
+
+.imprint-notice {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--color-header);
+  background: linear-gradient(135deg, rgba(69,140,204,0.07), rgba(64,232,254,0.05));
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.95rem;
+
+}
 
 
 
@@ -773,3 +814,7 @@ main {
 
 
 
+
+
+
+  
