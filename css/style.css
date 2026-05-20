@@ -391,7 +391,13 @@ main {
 
 .location-page main {
   position: relative;
-  background-image: var(--location-bg, none);
+  
+  /* Der Verlauf ist fest definiert. Das Bild dahinter (var) 
+     ändert sich automatisch je nach HTML-Seite */
+  background-image: 
+    linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85) ),
+    var(--location-bg, none);
+    
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -399,6 +405,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 1;
 }
 
 /* Dunkles Overlay über dem Hintergrundbild für Lesbarkeit */
@@ -406,8 +413,9 @@ main {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.15); /* Von 0.35 auf 0.15 reduziert */
   z-index: 0;
+  pointer-events: none; /* Klickevents gehen durch das Overlay durch */
 }
 
 /* Alles im main über dem Overlay */
