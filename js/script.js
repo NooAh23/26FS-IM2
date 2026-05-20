@@ -12,7 +12,7 @@ const drinkDescriptions = {
   "17831": "A Furlong Too Late ist ein eleganter Cocktail mit komplexen Kräuter- und Spirituosenaromen.",
   "15675": "A midsummernight dream ist ein leichter, aromatischer Drink mit sommerlicher Frische.",
   "17832": "A Night In Old Mandalay kombiniert würzige und süße Aromen zu einem besonderen Geschmackserlebnis.",
-  "17833": "A. J. ist ein unkomplizierter Cocktail mit fruchtigem Charakter und angenehmer Frische.",
+  "17833": "A. J. ist unkomplizierter Cocktail mit fruchtigem Charakter und angenehmer Frische.",
   "17834": "Der Abbey Cocktail ist ein klassischer Gin-Drink mit feiner Zitrusnote und elegantem Finish.",
   "17835": "Abilene verbindet cremige und süße Komponenten zu einem angenehm weichen Cocktail.",
   "15597": "Absolut Stress #2 liefert einen fruchtig-frischen Geschmack mit angenehmer Vodka-Note.",
@@ -92,7 +92,7 @@ const drinkDescriptions = {
   "17250": "Corpse Reviver ist ein legendärer Cocktail mit kräftiger Frische und komplexen Aromen.",
   "17196": "Cosmopolitan kombiniert Vodka, Cranberry und Limette zu einem modernen Cocktailklassiker.",
   "14133": "Cosmopolitan Martini bietet fruchtige Frische und elegante Cocktail-Optik.",
-  "14608": "Cream Soda überzeugt mit cremige Süße und sanfter Vanillenote.",
+  "14608": "Cream Soda überzeugt mit cremiger Süße und sanfter Vanillenote.",
   "17177": "Dark Caipirinha bringt kräftigen Zuckerrohrgeschmack und frische Limette perfekt zusammen.",
   "178334": "Death in the Afternoon kombiniert Absinth und prickelnden Sekt zu einem außergewöhnlichen Drink.",
   "17181": "Dirty Martini ist ein trockener Martini mit markanter Olivennote und elegantem Charakter.",
@@ -147,9 +147,6 @@ const drinkDescriptions = {
   "12732": "Chocolate Beverage überzeugt mit vollmundigem Schokoladengeschmack und angenehmer Süße.",
   "12734": "Chocolate Drink kombiniert cremige Konsistenz mit klassischem Kakaoaroma für gemütliche Genussmomente.",
   "12736": "Drinking Chocolate bietet intensiven Schokoladengeschmack mit besonders reichhaltiger Textur.",
-  "12738": "Hot Chocolate to Die for ist eine luxuriöse heiße Schokolade mit extra cremigem und intensivem Geschmack.",
-  "12744": "Microwave Hot Cocoa ist die schnelle und einfache Variante für cremigen Kakaogenuss zwischendurch.",
-  "12746": "Nuked Hot Chocolate überzeugt mit klassischem Schokoladengeschmack und wohltuender Wärme.",
   "12748": "Orange Scented Hot Chocolate verbindet intensive Schokolade mit feinen frischen Orangennoten.",
   "12750": "Spanish chocolate ist eine dickflüssige spanische Trinkschokolade mit kräftigem Kakaoaroma und samtiger Konsistenz.",
 
@@ -259,6 +256,7 @@ const navDropdown = document.querySelector('.nav-dropdown');
 if (navDropdown) {
     navDropdown.addEventListener('click', (e) => {        
         if (window.innerWidth > 768) {           
+            // Optionaler Desktop-Code
         }
     });
 }
@@ -275,123 +273,131 @@ if (burgerBtn && mobileNav) {
 }
 
 // Hauptlogik: Wetter laden & Drink anzeigen
-document.getElementById('wetter_button').addEventListener('click', function() {
-    
-    // URL Wetter ermitteln
-    const pageUrl = window.location.href;
-    console.log("Aktuelle Seite:", pageUrl);
+const wetterBtn = document.getElementById('wetter_button');
 
-    // Stadt aus der URL isolieren (z.B. brienz.html -> brienz)
-    let city = pageUrl.split('/').pop().split('.html')[0].toLowerCase();
-    
-    console.log("Erkannte Stadt (API-konform):", city);
-    
-    const url = `https://aareguru.existenz.ch/v2018/current?city=${city}`;
+if (wetterBtn) {
+    wetterBtn.addEventListener('click', function() {
+        
+        // URL Wetter ermitteln
+        const pageUrl = window.location.href;
+        console.log("Aktuelle Seite:", pageUrl);
 
-    console.log("Anfrage gestartet... Warte auf API-Antwort.");
+        // Stadt aus der URL isolieren (z.B. brienz.html -> brienz)
+        let city = pageUrl.split('/').pop().split('.html')[0].toLowerCase();
+        
+        console.log("Erkannte Stadt (API-konform):", city);
+        
+        const url = `https://aareguru.existenz.ch/v2018/current?city=${city}`;
 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            
-            console.log("Komplette API-Daten erhalten:", data);
+        console.log("Anfrage gestartet... Warte auf API-Antwort.");
 
-            const ortschaft = data.aare.location;
-            const temperatur = data.aare.temperature;
-            const sonneHeute = data.sun.today.suntotal;
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                
+                console.log("Komplette API-Daten erhalten:", data);
 
-            console.log("--- Gefilterte Daten ---");
-            console.log("Ort:", ortschaft);
-            console.log("Temp:", temperatur + " °C");
-            console.log("Sonne heute:", sonneHeute);
-            console.log("------------------------");
+                const ortschaft = data.aare.location;
+                const temperatur = data.aare.temperature;
+                const sonneHeute = data.sun.today.suntotal;
 
-            // Daten auf der Website anzeigen
-            document.getElementById('ort').textContent = ortschaft;
-            document.getElementById('temp').textContent = temperatur;
-            document.getElementById('sonne').textContent = sonneHeute;
+                console.log("--- Gefilterte Daten ---");
+                console.log("Ort:", ortschaft);
+                console.log("Temp:", temperatur + " °C");
+                console.log("Sonne heute:", sonneHeute);
+                console.log("------------------------");
 
-            // Umrechnung der Sonnenscheindauer (von "05:30" in eine Dezimalzahl wie 5.5)
-            const zeitParts = sonneHeute.split(':');
-            const sonneStunden = parseInt(zeitParts[0]) + (parseInt(zeitParts[1]) / 60);
+                // Daten auf der Website anzeigen (Sicherstellen, dass die Elemente existieren)
+                const ortEl = document.getElementById('ort');
+                const tempEl = document.getElementById('temp');
+                const sonneEl = document.getElementById('sonne');
 
-            // Drinks Logik: Kategorie anhand des Wetters bestimmen
-            let drinkKategorie = "Ordinary_Drink"; // Standard-Fallback
+                if (ortEl) ortEl.textContent = ortschaft;
+                if (tempEl) tempEl.textContent = temperatur;
+                if (sonneEl) sonneEl.textContent = sonneHeute;
 
-            if (temperatur > 23 && sonneStunden >= 4.5 && sonneStunden <= 8) {
-                drinkKategorie = "Cocktail";
-            } 
-            else if (temperatur > 15 && sonneStunden >= 2 && sonneStunden <= 5) {
-                drinkKategorie = "Beer";
-            }
-            else if (temperatur < 10 && sonneStunden <= 4) {
-                drinkKategorie = "Cocoa";
-            }
-            else if (temperatur < 10 && sonneStunden <= 5) {
-                drinkKategorie = "Ordinary_Drink"; 
-            }
-            else if (temperatur < 0 && sonneStunden <= 5) {
-                drinkKategorie = "Homemade_Liqueur";
-            }
-            else if (temperatur >= 10 && temperatur <= 24 && sonneStunden >= 2 && sonneStunden <= 6) {
-                drinkKategorie = "Shake";
-            }
-            else if (temperatur >= 10 && temperatur <= 16 && sonneStunden >= 1 && sonneStunden <= 3) {
-                drinkKategorie = "Shot";
-            }
-            else if (temperatur >= 10 && temperatur <= 35 && sonneStunden <= 10) {
-                drinkKategorie = "Soft_Drink";
-            }
+                // Umrechnung der Sonnenscheindauer (von "05:30" in eine Dezimalzahl wie 5.5)
+                const zeitParts = sonneHeute.split(':');
+                const sonneStunden = parseInt(zeitParts[0]) + (parseInt(zeitParts[1]) / 60);
 
-            console.log("Berechnete Kategorie:", drinkKategorie);
-            
-            // Kategorie auf der Seite anzeigen (Unterstriche durch Leerzeichen ersetzen)
-            if (document.getElementById('drinkAnzeige')) {
-                document.getElementById('drinkAnzeige').textContent = drinkKategorie.replace(/_/g, " ");
-            }
+                // Drinks Logik: Kategorie anhand des Wetters bestimmen
+                let drinkKategorie = "Ordinary_Drink"; // Standard-Fallback
 
-            // Zufälligen Drink aus der ermittelten Kategorie von TheCocktailDB abrufen
-            const drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${drinkKategorie}`;
+                if (temperatur > 23 && sonneStunden >= 4.5 && sonneStunden <= 8) {
+                    drinkKategorie = "Cocktail";
+                } 
+                else if (temperatur > 15 && sonneStunden >= 2 && sonneStunden <= 5) {
+                    drinkKategorie = "Beer";
+                }
+                else if (temperatur < 10 && sonneStunden <= 4) {
+                    drinkKategorie = "Cocoa";
+                }
+                else if (temperatur < 10 && sonneStunden <= 5) {
+                    drinkKategorie = "Ordinary_Drink"; 
+                }
+                else if (temperatur < 0 && sonneStunden <= 5) {
+                    drinkKategorie = "Homemade_Liqueur";
+                }
+                else if (temperatur >= 10 && temperatur <= 24 && sonneStunden >= 2 && sonneStunden <= 6) {
+                    drinkKategorie = "Shake";
+                }
+                else if (temperatur >= 10 && temperatur <= 16 && sonneStunden >= 1 && sonneStunden <= 3) {
+                    drinkKategorie = "Shot";
+                }
+                else if (temperatur >= 10 && temperatur <= 35 && sonneStunden <= 10) {
+                    drinkKategorie = "Soft_Drink";
+                }
 
-            fetch(drinkUrl)
-                .then(res => res.json())
-                .then(drinkData => {
-                    if (drinkData && drinkData.drinks) {
-                        // Zufälligen Index aus dem Array auswählen
-                        const randomIndex = Math.floor(Math.random() * drinkData.drinks.length);
-                        const selectedDrink = drinkData.drinks[randomIndex];
+                console.log("Berechnete Kategorie:", drinkKategorie);
+                
+                // Kategorie auf der Seite anzeigen (Unterstriche durch Leerzeichen ersetzen)
+                if (document.getElementById('drinkAnzeige')) {
+                    document.getElementById('drinkAnzeige').textContent = drinkKategorie.replace(/_/g, " ");
+                }
 
-                        console.log("Ausgewählter Drink:", selectedDrink);
+                // Zufälligen Drink aus der ermittelten Kategorie von TheCocktailDB abrufen
+                const drinkUrl = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${drinkKategorie}`;
 
-                        // Drink Name anzeigen
-                        if (document.getElementById('spezifischerDrink')) {
-                            document.getElementById('spezifischerDrink').textContent = selectedDrink.strDrink;
-                        }
-                        
-                        // Drink Bild anzeigen
-                        if (document.getElementById('drinkBild')) {
-                            document.getElementById('drinkBild').src = selectedDrink.strDrinkThumb;
-                            document.getElementById('drinkBild').style.display = 'block';
-                        }
+                fetch(drinkUrl)
+                    .then(res => res.json())
+                    .then(drinkData => {
+                        if (drinkData && drinkData.drinks) {
+                            // Zufälligen Index aus dem Array auswählen
+                            const randomIndex = Math.floor(Math.random() * drinkData.drinks.length);
+                            const selectedDrink = drinkData.drinks[randomIndex];
 
-                        // ─── TEXT ANZEIGEN ───
-                        const drinkId = selectedDrink.idDrink; // Holt die ID des Drinks (z.B. "15300")
-                        const beschreibungsElement = document.getElementById('drinkBeschreibung');
+                            console.log("Ausgewählter Drink:", selectedDrink);
 
-                        if (beschreibungsElement) {
-                            // Überprüfen, ob die ID in unserem großen drinkDescriptions-Objekt existiert
-                            if (drinkDescriptions[drinkId]) {
-                                beschreibungsElement.textContent = drinkDescriptions[drinkId];
-                            } else {
-                                // Fallback-Text ohne das Wort "Beschreibung"
-                                beschreibungsElement.textContent = "Ein erfrischender und passender Drink für das aktuelle Wetter! Probiere ihn aus.";
+                            // Drink Name anzeigen
+                            if (document.getElementById('spezifischerDrink')) {
+                                document.getElementById('spezifischerDrink').textContent = selectedDrink.strDrink;
+                            }
+                            
+                            // Drink Bild anzeigen
+                            if (document.getElementById('drinkBild')) {
+                                document.getElementById('drinkBild').src = selectedDrink.strDrinkThumb;
+                                document.getElementById('drinkBild').style.display = 'block';
+                            }
+
+                            // ─── TEXT ANZEIGEN ───
+                            const drinkId = selectedDrink.idDrink; // Holt die ID des Drinks (z.B. "15300")
+                            const beschreibungsElement = document.getElementById('drinkBeschreibung');
+
+                            if (beschreibungsElement) {
+                                // Überprüfen, ob die ID in unserem großen drinkDescriptions-Objekt existiert
+                                if (drinkDescriptions[drinkId]) {
+                                    beschreibungsElement.textContent = drinkDescriptions[drinkId];
+                                } else {
+                                    // Fallback-Text ohne das Wort "Beschreibung"
+                                    beschreibungsElement.textContent = "Ein erfrischender und passender Drink für das aktuelle Wetter! Probiere ihn aus.";
+                                }
                             }
                         }
-                    }
-                })
-                .catch(err => console.error("Fehler Cocktail-API:", err));
-        })
-        .catch(error => {
-            console.error('Fehler Wetter-API:', error);
-        });
-});
+                    })
+                    .catch(err => console.error("Fehler Cocktail-API:", err));
+            })
+            .catch(error => {
+                console.error('Fehler Wetter-API:', error);
+            });
+    });
+}
