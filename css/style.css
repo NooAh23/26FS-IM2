@@ -252,7 +252,7 @@ ul {
 
 /*    6. MOBILE NAVIGATION */
 .mobile-nav {
-  display: none;         /* Standardmäßig auf Handys unsichtbar */
+  display: none;         
   position: absolute;
   top: var(--header-height);
   left: 0;
@@ -261,7 +261,20 @@ ul {
   flex-direction: column;
   padding: 1rem 2rem 1.5rem;
   gap: 0;
-  z-index: 9999;        /* Damit es sicher ÜBER den Profilbildern liegt */
+  z-index: 9999;    
+
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+}
+
+  
+    
 }
 
 /* Der Retter: Nutzt die ID (#) statt dem Punkt, damit das CSS den Befehl erzwingt! */
