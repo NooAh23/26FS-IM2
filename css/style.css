@@ -84,7 +84,7 @@ ul {
 }
 
 
-/* 3. HEADER */
+/* HEADER */
 .site-header {
   background: linear-gradient(90deg, var(--color-blue-left) 0%, var(--color-blue-right) 100%);
   height: var(--header-height);
@@ -97,7 +97,6 @@ ul {
   z-index: 100;
 }
 
-/* Logo im Header */
 .site-header a img {
   height: 50px;
   width: auto;
@@ -201,7 +200,7 @@ ul {
   transform: translateY(0);
 }
 
-/* Einzelne Einträge */
+
 .dropdown-menu li a {
   display: block;
   padding: 0.55rem 1.2rem;
@@ -211,7 +210,8 @@ ul {
   transition: background var(--transition), color var(--transition), padding-left var(--transition);
 }
 
-/* Hover: Farbe + leichtes Einrücken */
+
+
 .dropdown-menu li a:hover {
   color: var(--color-hover);
   padding-left: 1.6rem;
@@ -219,7 +219,7 @@ ul {
 }
 
 
-/*   5. BURGER-BUTTON (Mobile) */
+/*BURGER-BUTTON (Mobile) */
 .burger {
   display: none;        
   flex-direction: column;
@@ -250,7 +250,7 @@ ul {
 
 
 
-/*    6. MOBILE NAVIGATION */
+/*  MOBILE NAVIGATION */
 .mobile-nav {
   display: none;         
   position: absolute;
@@ -264,7 +264,7 @@ ul {
   z-index: 9999;       
 }
 
-/*    6.1 MOBILE Bild */
+/* MOBILE Bild */
 .mobile-only {
   display: none;
 }
@@ -275,7 +275,7 @@ ul {
   }
 }
 
-/* Der Retter: Nutzt die ID (#) statt dem Punkt, damit das CSS den Befehl erzwingt! */
+
 #mobile-nav.open {
   display: flex !important;
 }
@@ -321,7 +321,7 @@ main {
 
 
 
-/*    8. STARTSEITE — HERO-BEREICH */
+/*STARTSEITE — HERO-BEREICH */
 .hero {
   text-align: center;
   padding: 4rem 2rem 2rem;
@@ -341,12 +341,13 @@ main {
 }
 
 
-/*   9. STARTSEITE — KARTE / ROUTE */
+/*STARTSEITE — KARTE / ROUTE */
 .route-section {
   padding: 2rem;
 }
 
-/* Karten-Bild (Desktop) */
+
+
 .image-map {
   display: flex;
   justify-content: center;
@@ -394,13 +395,12 @@ main {
 }
 
 
-/* 10. LOCATION-SEITE */
+/*LOCATION-SEITE */
 
 .location-page main {
   position: relative;
   
-  /* Der Verlauf ist fest definiert. Das Bild dahinter (var) 
-     ändert sich automatisch je nach HTML-Seite */
+
   background-image: 
     linear-gradient(180deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.85) ),
     var(--location-bg, none);
@@ -415,7 +415,7 @@ main {
   flex: 1;
 }
 
-/* Dunkles Overlay über dem Hintergrundbild für Lesbarkeit */
+/*  Overlay */
 .location-page main::before {
   content: '';
   position: absolute;
@@ -424,14 +424,12 @@ main {
   z-index: 0;
   pointer-events: none;
 }
-
-/* Alles im main über dem Overlay */
 .location-page main > * {
   position: relative;
   z-index: 1;
 }
 
-/* Ortsname oben */
+/* Ortsname */
 .location-title {
   font-family: var(--font-main);
   font-size: var(--size-h1);
@@ -442,7 +440,7 @@ main {
 
 }
 
-/* Wetter-Animations-Container */
+
 .lottie-wrapper {
   margin: 0 auto 1rem;
 }
@@ -468,7 +466,8 @@ main {
   display: block;
 }
 
-/* Hover-Effekt */
+
+/* Hover */
 #wetter_button:hover {
   transform: translateY(-2px) scale(1.04);
 
@@ -479,7 +478,7 @@ main {
   transform: scale(0.98);
 }
 
-/* Wetter-Info-Anzeige */
+/* Wetter-Info */
 #wetterAnzeige {
   font-family: var(--font-main);
   font-size: 1.5rem;
@@ -528,7 +527,7 @@ main {
   line-height: 1.5;
 }
 
-/* Kategorie-Anzeige (klein, dezent) */
+/* Kategorie-Anzeige */
 #drinkAnzeige {
   font-family: var(--font-body);
   font-size: 0.85rem;
@@ -678,9 +677,7 @@ main {
 }
 
 
-/*
-   13. RESPONSIVE — Tablet 
- */
+/*RESPONSIVE — Tablet */
 @media (max-width: 900px) {
  
   .site-nav {
@@ -702,25 +699,24 @@ main {
 }
 
 
-/* 
-   14. RESPONSIVE — Mobil 
-*/
+/*RESPONSIVE — Mobil */
+
 @media (max-width: 768px) {
-  /* Header kompakter */
+
   .site-header {
     padding: 0 1rem;
   }
   .site-header a img {
     height: 40px;
   }
-  /* Desktop-Karte verstecken, Mobile-Timeline zeigen */
+
   .image-map {
     display: none;
   }
   .route-mobile {
     display: block;
   }
-  /* Hero */
+
   .hero {
     padding: 2rem 1rem 1rem;
   }
@@ -730,7 +726,7 @@ main {
   .hero p {
     font-size: 1.3rem;
   }
-  /* Location-Seite: kein fixed background (Performance) */
+
   .location-page main {
     background-attachment: scroll;
     padding: 1.5rem 0.5rem 2rem;
@@ -738,12 +734,12 @@ main {
   .location-title {
     font-size: 2.5rem;
   }
-  /* Drink-Karte volle Breite */
+ 
   .drink-card {
     width: 95%;
     padding: 1rem;
   }
-  /* Team: untereinander */
+
   .team-member,
   .team-member.reverse {
     flex-direction: column;
@@ -762,46 +758,40 @@ main {
   }
   .footer-brand-text {
     font-size: 1.6rem;
-  }
+}
   /* Lottie */
   .my-small-lottie {
     width: 90px;
     height: 90px;
-  }
+}
 }
 
 
-/* 
-   IMPRESSUM
- */
+/* IMPRESSUM*/
 .imprint-page {
 
   max-width: 700px;
   margin: 0 auto;
-  padding: 3rem 2rem;
-}
+  padding: 3rem 2rem;}
 
 .imprint-page h1 {
   font-family: var(--font-display);
   font-size: 3.6rem;
   color: var(--color-header);
-  margin-bottom: 2rem;
-}
+  margin-bottom: 2rem;}
 
 .imprint-page h2 {
   font-size: 2.15rem;
   font-weight: 700;
   color: var(--color-header);
-  margin: 1.5rem 0 0.4rem;
-}
+  margin: 1.5rem 0 0.4rem;}
 
 .imprint-page p,
 .imprint-page address {
   font-size: 1.5rem;
   line-height: 1.7;
   color: #4a5568;
-  font-style: normal;
-}
+  font-style: normal;}
 
 .imprint-notice {
   margin-top: 2rem;
@@ -809,9 +799,7 @@ main {
   border-left: 4px solid var(--color-header);
   background: linear-gradient(135deg, rgba(69,140,204,0.07), rgba(64,232,254,0.05));
   border-radius: 0 var(--radius) var(--radius) 0;
-  font-size: 0.95rem;
-
-}
+  font-size: 0.95rem;}
 
 
 
