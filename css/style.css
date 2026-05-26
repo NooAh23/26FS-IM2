@@ -524,7 +524,7 @@ main {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Navigation zwischen Locations (← Brienz   Thun →) */
+/* Navigation zwischen Locations */
 .location-nav {
   display: flex;
   justify-content: space-between;
@@ -574,7 +574,7 @@ main {
 .footer-logo-container {
   display: flex;
   align-items: center;
-  justify-content: center; /* horizontal mittig */
+  justify-content: center; 
   gap: 15px;
 
   width: 100%;
@@ -667,19 +667,19 @@ main {
 }
 
 
-/* ──────────────────────────────
-   13. RESPONSIVE — Tablet (max 900px)
-────────────────────────────── */
+/*
+   13. RESPONSIVE — Tablet 
+ */
 @media (max-width: 900px) {
-  /* Desktop-Nav ausblenden */
+ 
   .site-nav {
     display: none;
   }
-  /* Burger einblenden */
+  
   .burger {
     display: flex;
   }
-  /* Karte verkleinern */
+  
   .image-map img {
     max-width: 100%;
   }
@@ -691,9 +691,9 @@ main {
 }
 
 
-/* ──────────────────────────────
-   14. RESPONSIVE — Mobil (max 600px)
-────────────────────────────── */
+/* 
+   14. RESPONSIVE — Mobil 
+*/
 @media (max-width: 600px) {
   /* Header kompakter */
   .site-header {
